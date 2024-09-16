@@ -3,6 +3,7 @@ import { UsersModule } from './users/users.module';
 import { TwilioService } from './twilio/twilio.service';
 import { ConfigModule } from '@nestjs/config';
 import { SmtpModule } from './smtp/smtp.module';
+import { AppController } from './app.controller';
 
 @Module({
   imports: [
@@ -10,7 +11,7 @@ import { SmtpModule } from './smtp/smtp.module';
     ConfigModule.forRoot(),
     SmtpModule,
   ],
-  controllers: [],
+  controllers: [AppController],
   providers: [TwilioService],
 })
 export class AppModule {}
